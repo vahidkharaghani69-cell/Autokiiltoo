@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html class="dark" lang="fi" style="scroll-behavior: smooth;">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Tietoa Meistä — Autokiilto | Finnish Optical Headlight Restoration</title>
+  <meta name="description" content="Autokiilto Hämeenlinna — Asiantuntemusta ajovalojen polymeerihöyrytyksestä, katsastustakuusta ja auton optiikasta." />
+  <meta property="og:title" content="Tietoa Meistä — Autokiilto" />
+  <meta property="og:description" content="Suomalaista laatutyötä ja teollisen tason höyrykorjausta ajovaloille Hämeenlinnassa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+  
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#0a0a0a",
+            "surface-base": "#0a0a0a",
+            "surface-dim": "#121212",
+            "surface-card": "#181818",
+            "surface-container-high": "#242424",
+            "border-subtle": "#262626",
+            "border-focus": "#dc2626",
+            "primary": "#ffb4ab",
+            "primary-container": "#dc2626",
+            "text-primary": "#fafafa",
+            "text-secondary": "#a3a3a3",
+            "text-muted": "#666666",
+            "optic-white": "#ffffff"
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-surface-base text-text-primary antialiased selection:bg-primary-container selection:text-optic-white">
+
+  <!-- FIXED NAVIGATION HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#0c0c0c]/90 backdrop-blur-md border-b border-border-subtle w-full shadow-2xl">
+    <div class="h-20 max-w-[1320px] mx-auto px-6 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a class="flex items-center gap-3 group focus:outline-none" href="index.html">
+        <img alt="Autokiilto Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W2bdIF79f9T-wkh7nu-RcjD7zwT163DqZHTd9usGeqvKY8tJLU784xR9jKN8o3z6U1nR3nPqEozc5CTn9XrLhYsn8EWSv1p5HmY5W0zdoR-od1h0_Lh0X2Ed7AXqCUNYp7mooW5z5qWj3OghuAXLC2qSS1GF2cDBJa7Yj3tRGW-zu4cck9qAsfA2dqcbQwXR5LKCWoRlW40G9yZY5_psaNo14e5hxCLlNjQbQdTFLVuuzlg7rwOp-pTM1v"/>
+        <div class="flex flex-col">
+          <span class="text-xl font-black tracking-tight text-optic-white leading-none">AUTOKIILTO</span>
+          <span class="text-[10px] uppercase tracking-widest text-text-muted mt-1" data-i18n="nav_tagline">OPTICAL RESTORATION</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold tracking-wider uppercase">
+        <a class="text-text-secondary hover:text-optic-white transition-colors duration-150" data-i18n="nav_home" href="index.html">Etusivu</a>
+        <a class="text-text-secondary hover:text-optic-white transition-colors duration-150" data-i18n="nav_services" href="index.html#palvelut">Palvelut</a>
+        <a class="text-text-secondary hover:text-optic-white transition-colors duration-150" data-i18n="nav_gallery" href="index.html#galleria">Ennen &amp; Jälkeen</a>
+        <a class="text-primary-container transition-colors duration-150" data-i18n="nav_about" href="about.html">Tietoa Meistä</a>
+        <a class="text-text-secondary hover:text-optic-white transition-colors duration-150" data-i18n="nav_contact" href="contact.html">Yhteystiedot</a>
+      </nav>
+
+      <!-- Right Action Strip: Language Toggle + CTA -->
+      <div class="flex items-center gap-4">
+        <div aria-label="Language Selector" class="flex items-center bg-surface-card border border-border-subtle rounded p-0.5" role="group">
+          <button class="px-2.5 py-1 text-xs font-bold rounded uppercase transition-all duration-150 bg-primary-container text-optic-white shadow-[0_0_12px_rgba(220,38,38,0.5)]" id="lang-btn-fi" onclick="setLanguage('fi')" type="button">FI</button>
+          <button class="px-2.5 py-1 text-xs font-bold rounded uppercase transition-all duration-150 text-text-muted hover:text-text-primary" id="lang-btn-en" onclick="setLanguage('en')" type="button">EN</button>
+        </div>
+
+        <a class="hidden sm:inline-flex items-center justify-center bg-primary-container hover:bg-red-700 text-optic-white text-xs md:text-sm font-bold uppercase tracking-wider px-4 py-2.5 rounded transition-all duration-200 hover:shadow-[0_0_20px_rgba(220,38,38,0.5)] active:scale-[0.98]" href="contact.html">
+          <span data-i18n="nav_book_btn">Varaa Aika</span>
+        </a>
+
+        <button class="lg:hidden p-2 rounded text-text-secondary hover:text-optic-white hover:bg-surface-card" onclick="toggleMobileMenu()" aria-label="Toggle navigation">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="hidden lg:hidden border-t border-border-subtle bg-surface-card px-6 py-4 flex flex-col gap-3" id="mobile-nav">
+      <a class="text-sm font-bold text-text-secondary hover:text-optic-white py-1" data-i18n="nav_home" href="index.html">Etusivu</a>
+      <a class="text-sm font-bold text-text-secondary hover:text-optic-white py-1" data-i18n="nav_services" href="index.html#palvelut">Palvelut</a>
+      <a class="text-sm font-bold text-text-secondary hover:text-optic-white py-1" data-i18n="nav_gallery" href="index.html#galleria">Ennen &amp; Jälkeen</a>
+      <a class="text-sm font-bold text-primary-container py-1" data-i18n="nav_about" href="about.html">Tietoa Meistä</a>
+      <a class="text-sm font-bold text-text-secondary hover:text-optic-white py-1" data-i18n="nav_contact" href="contact.html">Yhteystiedot</a>
+      <a class="w-full mt-2 inline-flex items-center justify-center bg-primary-container text-optic-white text-xs font-bold uppercase tracking-wider py-3 rounded" href="contact.html">
+        <span data-i18n="nav_book_btn">Varaa Aika</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="w-full pt-20">
+
+    <!-- PAGE HERO -->
+    <section class="py-16 md:py-24 bg-surface-dim border-b border-border-subtle relative overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none opacity-20 bg-[radial-gradient(circle_at_50%_0%,rgba(220,38,38,0.25)_0%,transparent_60%)]"></div>
+      <div class="max-w-[1320px] mx-auto px-6 relative z-10 text-center flex flex-col items-center">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-container/10 border border-primary-container/30 mb-4">
+          <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+          <span class="text-xs uppercase tracking-widest text-primary font-bold" data-i18n="about_hero_badge">MEIDÄN TARINAMME</span>
+        </div>
+        <h1 class="text-4xl md:text-6xl font-black text-optic-white uppercase tracking-tight max-w-4xl" data-i18n="about_hero_title">
+          Suomalaista Laatutyötä &amp; Optista Tarkkuutta
+        </h1>
+      </div>
+    </section>
+
+    <!-- STORY & SCIENCE SECTION -->
+    <section class="py-20 bg-surface-base border-b border-border-subtle">
+      <div class="max-w-[1320px] mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-6 flex flex-col gap-6">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-optic-white uppercase tracking-tight" data-i18n="about_why_cloud_title">
+              Miksi Ajovaloumpiot Sumentuvat Suomessa?
+            </h2>
+            <p class="text-sm md:text-base text-text-secondary leading-relaxed" data-i18n="about_story_p1">
+              Suomen ankarat talvet, tiesuola, hiekoitussepeli ja auringon UV-säteily rasittavat nykyaikaisia polykarbonaattimuovisia ajovaloumpioita poikkeuksellisen rajusti. Vuosien myötä alkuperäinen suojalakkapinta hapettuu, sumenee ja kellastuu.
+            </p>
+            <p class="text-sm md:text-base text-text-secondary leading-relaxed" data-i18n="about_story_p2">
+              Uusien alkuperäisvalojen ostaminen maksaa usein satoja tai jopa tuhansia euroja. Pelkkä nopea vahaus tai tahnakiillotus taas sumentuu uudelleen parissa kuukaudessa. Me Autokiillolla käytämme teollisuustason polymeerihöyrytystä (Vapor Tech), joka sulattaa polykarbonaatin optisesti kristallinkirkkaaksi ja sulkee sen pitkäkestoisella UV-suojalla.
+            </p>
+
+            <!-- Key Proof Points -->
+            <div class="grid grid-cols-2 gap-4 pt-4">
+              <div class="p-4 rounded-lg bg-surface-card border border-border-subtle">
+                <span class="text-3xl font-black text-primary-container">500+</span>
+                <p class="text-xs text-text-secondary uppercase mt-1" data-i18n="about_stat_restored">Kunnostettua Ajovaloa</p>
+              </div>
+              <div class="p-4 rounded-lg bg-surface-card border border-border-subtle">
+                <span class="text-3xl font-black text-emerald-400">100%</span>
+                <p class="text-xs text-text-secondary uppercase mt-1" data-i18n="about_stat_pass">Katsastuksen Läpäisy</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Process Visual -->
+          <div class="lg:col-span-6">
+            <div class="relative rounded-2xl overflow-hidden border border-border-subtle bg-surface-card p-3 shadow-2xl">
+              <img alt="Höyrykunnostus laite toiminnassa" class="w-full aspect-[4/3] object-cover rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_Fm0wRwswQ-6z47_pvowy7LFiQjC97d_VZYnwqn3lw40LqNXjNdeWI2uYr-nwWSMX7d8OGHQWdbbO8BBEY1HpNQPWuXW_qByt2E3YOhkhjxVInvxOY3vrVJ8YNGL2A5ijbfHchrxgQnasZsAqdDPGOmUY4FhXM1HOmKKt6M_F5Pnjg7MhMqZidMOhVQ2B8kuRvJBCj-DOnYdikMcSv1kXeDzvA84V2JmiKmWFh8WcBvi5SctarMreow"/>
+              <div class="p-4 flex items-center justify-between text-xs text-text-muted border-t border-border-subtle mt-3">
+                <span data-i18n="about_tech_label1">Polymeerihöyryn molekyylitasoitus</span>
+                <span class="font-mono text-optic-white" data-i18n="about_tech_label2">KALIBROITU LÄMPÖTEKNOLOGIA</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- KATSASTUS & SAFETY SECTION -->
+    <section class="py-20 bg-surface-dim border-b border-border-subtle">
+      <div class="max-w-[1320px] mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center mb-12">
+          <span class="text-xs uppercase tracking-widest text-primary-container font-bold" data-i18n="about_hazard_heading">LIIKENNETURVALLISUUS &amp; SÄÄDÖKSET</span>
+          <h2 class="text-3xl md:text-5xl font-black text-optic-white uppercase tracking-tight mt-1" data-i18n="about_why_inspect">
+            Miksi Katsastuksessa Hylätään?
+          </h2>
+          <p class="text-sm md:text-base text-text-secondary mt-3 leading-relaxed" data-i18n="about_inspect_desc">
+            Katsastusviranomainen (Traficom) edellyttää selkeää ja oikeanlaista valokuviota. Sumuinen umpio sirottaa valoa vastaantulijoiden silmiin ja pudottaa kantamaa jopa 70%. Kunnostuksemme palauttaa terävän valokuvion ja takaa katsastuksen läpäisyn.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <div class="p-6 rounded-xl bg-surface-card border border-border-subtle flex flex-col gap-3">
+            <div class="w-10 h-10 rounded bg-red-950/40 border border-primary-container flex items-center justify-center text-primary-container font-bold">
+              <span class="material-symbols-outlined">warning</span>
+            </div>
+            <h3 class="text-base font-bold text-optic-white" data-i18n="about_hazard_1_title">1. Heikentynyt Kantama</h3>
+            <p class="text-xs text-text-secondary leading-relaxed" data-i18n="about_hazard_1_desc">
+              Hapettunut muovi absorboi ja hajottaa halogeeni- tai xenon-valon ennen kuin se saavuttaa ajoradan. Tämä lyhentää reaktioaikaa hirvi- ja jalankulkijatilanteissa syksyn pimeydessä.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-xl bg-surface-card border border-border-subtle flex flex-col gap-3">
+            <div class="w-10 h-10 rounded bg-red-950/40 border border-primary-container flex items-center justify-center text-primary-container font-bold">
+              <span class="material-symbols-outlined">visibility_off</span>
+            </div>
+            <h3 class="text-base font-bold text-optic-white" data-i18n="about_hazard_2_title">2. Vastaantulijoiden Häikäisy</h3>
+            <p class="text-xs text-text-secondary leading-relaxed" data-i18n="about_hazard_2_desc">
+              Sumentunut linssi toimii kuin maitolasi: valo ei suuntaudu tiehen, vaan leviää hajavalona suoraan vastaantulijan tuulilasiin aiheuttaen vaaratilanteita.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-xl bg-surface-card border border-border-subtle flex flex-col gap-3">
+            <div class="w-10 h-10 rounded bg-emerald-950/40 border border-emerald-500 flex items-center justify-center text-emerald-400 font-bold">
+              <span class="material-symbols-outlined">verified</span>
+            </div>
+            <h3 class="text-base font-bold text-optic-white" data-i18n="about_hazard_3_title">3. Katsastusmääräys (Traficom)</h3>
+            <p class="text-xs text-text-secondary leading-relaxed" data-i18n="about_hazard_3_desc">
+              Katsastusmies tarkistaa valokuvion suuntauslaitteella. Epätasaisesta kuviosta seuraa korjauskehotus tai uusintakatsastus. Autokiillolta saat 100% hyväksyntätakuun.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKSHOP & CALL TO ACTION -->
+    <section class="py-20 bg-surface-base">
+      <div class="max-w-[1000px] mx-auto px-6 text-center flex flex-col items-center">
+        <h2 class="text-3xl md:text-5xl font-black text-optic-white uppercase tracking-tight" data-i18n="about_cta_title">Tuo Autosi Hämeenlinnaan</h2>
+        <p class="text-sm md:text-base text-text-secondary max-w-xl mt-3 leading-relaxed" data-i18n="about_cta_desc">
+          Käsittelemme autosi ammattitaidolla ja huolella. Takaamme huipputuloksen tai saat rahasi takaisin.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center gap-4 mt-8">
+          <a href="contact.html" class="inline-flex items-center gap-3 bg-primary-container hover:bg-red-700 text-optic-white font-extrabold text-sm uppercase tracking-wider px-8 py-4 rounded transition-all duration-200 shadow-xl">
+            <span data-i18n="about_cta_btn">Ota Yhteyttä &amp; Varaa</span>
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
+          <a href="index.html#palvelut" class="inline-flex items-center gap-2 bg-surface-card hover:bg-surface-container-high border border-border-subtle text-optic-white font-semibold text-sm px-6 py-4 rounded transition-all">
+            <span data-i18n="about_cta_price_btn">Katso Hinnasto</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="w-full bg-[#080808] border-t border-border-subtle py-16">
+    <div class="max-w-[1320px] mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-10">
+      <div class="md:col-span-4 flex flex-col gap-4">
+        <div class="flex items-center gap-3">
+          <img alt="Autokiilto Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W2bdIF79f9T-wkh7nu-RcjD7zwT163DqZHTd9usGeqvKY8tJLU784xR9jKN8o3z6U1nR3nPqEozc5CTn9XrLhYsn8EWSv1p5HmY5W0zdoR-od1h0_Lh0X2Ed7AXqCUNYp7mooW5z5qWj3OghuAXLC2qSS1GF2cDBJa7Yj3tRGW-zu4cck9qAsfA2dqcbQwXR5LKCWoRlW40G9yZY5_psaNo14e5hxCLlNjQbQdTFLVuuzlg7rwOp-pTM1v"/>
+          <span class="text-lg font-black tracking-tight text-optic-white">AUTOKIILTO</span>
+        </div>
+        <p class="text-xs text-text-secondary leading-relaxed" data-i18n="footer_bio">
+          Suomalaista tarkkuustyötä ajovalojen ja auton optiikan palauttamiseen Hämeenlinnassa. 100% katsastustakuu jokaiselle ajoneuvolle.
+        </p>
+      </div>
+
+      <div class="md:col-span-3 flex flex-col gap-3">
+        <h4 class="text-xs uppercase font-extrabold tracking-widest text-optic-white" data-i18n="footer_links_title">Pikalinkit</h4>
+        <div class="flex flex-col gap-2 text-xs text-text-secondary">
+          <a class="hover:text-primary-container transition-colors" href="index.html" data-i18n="nav_home">Etusivu</a>
+          <a class="hover:text-primary-container transition-colors" href="index.html#palvelut" data-i18n="nav_services">Palvelut</a>
+          <a class="hover:text-primary-container transition-colors" href="index.html#galleria" data-i18n="nav_gallery">Ennen &amp; Jälkeen</a>
+          <a class="hover:text-primary-container transition-colors" href="about.html" data-i18n="nav_about">Tietoa Meistä</a>
+          <a class="hover:text-primary-container transition-colors" href="contact.html" data-i18n="nav_contact">Yhteystiedot</a>
+        </div>
+      </div>
+
+      <div class="md:col-span-3 flex flex-col gap-3">
+        <h4 class="text-xs uppercase font-extrabold tracking-widest text-optic-white" data-i18n="footer_contact_title">Yhteystiedot</h4>
+        <div class="flex flex-col gap-2 text-xs text-text-secondary">
+          <p><span class="text-text-muted" data-i18n="footer_lbl_phone">Puh:</span> <a class="hover:text-optic-white" href="tel:+358401572120">+358 40 157 21 20</a></p>
+          <p><span class="text-text-muted" data-i18n="footer_lbl_email">Sähköposti:</span> <a class="hover:text-optic-white" href="mailto:autokiilto.fi@gmail.com">autokiilto.fi@gmail.com</a></p>
+          <p><span class="text-text-muted">Telegram:</span> <a class="hover:text-[#229ED9]" href="https://t.me/autokiilto" target="_blank">@autokiilto</a></p>
+          <p><span class="text-text-muted" data-i18n="footer_lbl_loc">Sijainti:</span> <span data-i18n="footer_loc_val">Hämeenlinna, Suomi</span></p>
+        </div>
+      </div>
+
+      <div class="md:col-span-2 flex flex-col gap-3">
+        <h4 class="text-xs uppercase font-extrabold tracking-widest text-optic-white" data-i18n="footer_hours_title">Aukioloajat</h4>
+        <div class="flex flex-col gap-1.5 text-xs text-text-secondary">
+          <p class="font-semibold text-optic-white" data-i18n="footer_hours_weekdays">Ma – Pe:</p>
+          <p>08:00 – 18:00</p>
+          <p class="font-semibold text-optic-white mt-1" data-i18n="footer_hours_sat">Lauantai:</p>
+          <p>10:00 – 15:00</p>
+          <p class="text-text-muted mt-1" data-i18n="footer_hours_sun">Sunnuntai: Suljettu</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-[1320px] mx-auto px-6 mt-12 pt-6 border-t border-border-subtle/60 flex flex-col sm:flex-row items-center justify-between text-xs text-text-muted gap-4">
+      <p data-i18n="footer_copy">© 2025 Autokiilto. Kaikki oikeudet pidätetään.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
